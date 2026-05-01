@@ -7,13 +7,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Apptextstyle {
   static TextStyle onBoardingTitle = GoogleFonts.inter(
-    fontSize: 32.sp,
+    fontSize: 28.sp,
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
   static TextStyle onBoardingdiscrbtino = GoogleFonts.inter(
-    fontSize: 14.sp,
+    fontSize: 12.sp,
     fontWeight: FontWeight.w400,
-    color: Colors.grey,
+    color:  Color.fromARGB(228, 255, 253, 253),
   );
 }
