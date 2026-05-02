@@ -1,7 +1,11 @@
-import 'package:app_menu/core/style/AppTextStyle.dart';
+import 'package:app_menu/core/featusers/HomeScreen/widget/castomScroll.dart';
+import 'package:app_menu/core/featusers/HomeScreen/widget/topscreen.dart';
+import 'package:app_menu/core/routering/App_routering.dart';
 import 'package:app_menu/core/style/App_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -16,46 +20,58 @@ class _HomescreenState extends State<Homescreen> {
     return SafeArea(
       child: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Topscreen(),
 
-            Container(
-              width: double.infinity,
-              height: double.infinity,
+            SizedBox(height: 25.h),
 
-              child: Stack(
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 9.sp),
+              child: Column(
                 children: [
-                  Image.asset(
-                    "assets/image/image 34.png",
-                    //width: 500.w,
-              
-                   // height: 662.h,
-                  ),
-              
-                  Positioned(
-                    //    top: 90,
-                    //  right: 167,
-                     left: 45,
-                    bottom:50 .h,
-                    child: Container(
-                      width: 188.w,
-                      height: 186.h,
-                      padding: EdgeInsets.all(17.w),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(48.r),
-                        color: AppColor.primaryColor.withOpacity(0.8),
-                      ),
-              
-                      child: Center(
-                        child: Text(
-                          "Welcome\nAdd A New Recipe",
-                          style: Apptextstyle.onBoardingTitle,
-                        ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8.sp),
+                    child: Text(
+                      "Your Food",
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(height: 25.h),
+            Expanded(
+              child: GridView.builder(
+                itemCount: 4,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+
+                  mainAxisSpacing: 30.sp,
+                  crossAxisSpacing: 1.sp,
+                ),
+                itemBuilder: (context, index) {
+                  return Castomscroll(
+                    image: "assets/image/Image (1).png",
+                    title: "bbbb",
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 310.sp),
+              child: FloatingActionButton(
+                shape: CircleBorder(),
+                onPressed: () {},
+                backgroundColor: AppColor.primaryColor,
+                child: Icon(Icons.add, color: Colors.white, size: 30.sp),
+              ),
+            ),
+            SizedBox(height: 10.h),
           ],
         ),
       ),
