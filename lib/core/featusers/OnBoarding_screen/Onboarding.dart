@@ -1,3 +1,4 @@
+import 'package:app_menu/core/featusers/OnBoarding_screen/widget/onborading_syrver.dart';
 import 'package:app_menu/core/routering/App_routering.dart';
 import 'package:app_menu/core/style/AppTextStyle.dart';
 import 'package:app_menu/core/style/App_color.dart';
@@ -29,6 +30,20 @@ class _OnboardingState extends State<Onboarding> {
   int currentIndex = 0;
 
   CarouselSliderController controler = CarouselSliderController();
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((__) {
+      bool isFirstTime = OnboradingSyrver.isFirstTime();
+       OnboradingSyrver.setisfirstTime();
+      if (isFirstTime == false) {
+        context.pushReplacementNamed(AppRouter.HomeScreen);
+       
+      }
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,8 +137,8 @@ class _OnboardingState extends State<Onboarding> {
                       },
                     ),
 
-              
                     Spacer(),
+
                     currentIndex >= 2
                         ? SizedBox.shrink()
                         : Row(
