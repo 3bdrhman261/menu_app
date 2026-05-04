@@ -4,11 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Castomscroll extends StatelessWidget {
- final String? name;
+  final String? name;
   final String? discretion;
-  final String ?time;
-  final String ?image;
-  final double ?rate;
+  final String? time;
+  final String? image;
+  final double? rate;
   final Function()? onTap;
   const Castomscroll({
     super.key,
@@ -17,7 +17,7 @@ class Castomscroll extends StatelessWidget {
     this.name,
     this.onTap,
     this.time,
-    this.rate
+    this.rate,
   });
 
   @override
@@ -35,14 +35,17 @@ class Castomscroll extends StatelessWidget {
             ),
 
             child: Column(
+              
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  fit: BoxFit.cover,
-
-                  image!,
-                  width: 137.w,
-                  height: 106.h,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.r),
+                  child: Image.network(
+                    image!,
+                    fit: BoxFit.cover,
+                    width: 137.w,
+                    height: 106.h,
+                  ),
                 ),
 
                 Center(
@@ -51,7 +54,7 @@ class Castomscroll extends StatelessWidget {
                     children: [
                       Padding(padding: EdgeInsetsGeometry.all(5)),
                       Text(
-                        name??"ffff",
+                        name!,
 
                         maxLines: 1,
                         style: GoogleFonts.inter(
@@ -66,7 +69,7 @@ class Castomscroll extends StatelessWidget {
                           Padding(padding: EdgeInsetsGeometry.all(5)),
                           SvgPicture.asset("assets/icons/Star 6.svg"),
                           Text(
-                            rate.toString(), 
+                            rate.toString(),
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.w500,
                               fontSize: 12.sp,
@@ -76,7 +79,7 @@ class Castomscroll extends StatelessWidget {
                           SizedBox(width: 40.w),
                           SvgPicture.asset("assets/icons/Subtract.svg"),
                           Text(
-                            time ??"wwww" ,
+                            time!,
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.w500,
                               fontSize: 12.sp,

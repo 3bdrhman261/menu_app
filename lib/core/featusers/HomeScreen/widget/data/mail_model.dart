@@ -15,9 +15,9 @@ class Meal {
 
   Map<String, dynamic> toMap() {
     return {
-      'name': name,
+      'title': name,
       'time': time,
-      'discretion': discretion, // بد
+      'discretion': discretion, 
       'image': image,
       'rate': rate,
     };
@@ -25,9 +25,9 @@ class Meal {
 
   factory Meal.fromMap(Map<String, dynamic> map) {
     return Meal(
-      name: map['name'] ?? '',
-      time: map['time'] ?? '',
-      discretion: map['discretion'] ?? '',
+      name: map['title'],
+      time: map['time'],
+      discretion: map['discretion'],
       image: map['image'] ?? '',
       rate: map['rate'] ?? 0.toDouble(),
     );

@@ -1,7 +1,7 @@
-
 import 'package:app_menu/core/style/App_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PrimaryButtonWidget extends StatelessWidget {
   final String? buttonText;
@@ -32,7 +32,14 @@ class PrimaryButtonWidget extends StatelessWidget {
         fixedSize: Size(width ?? 331.w, height ?? 56.h),
       ),
       onPressed: onPressed,
-      child: Text(buttonText ?? "", style: TextStyle(color: Colors.white)),
+      child: Text(
+        buttonText ?? "",
+        style: GoogleFonts.inter(
+          fontWeight: FontWeight.w600,
+          fontSize: 14.sp,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

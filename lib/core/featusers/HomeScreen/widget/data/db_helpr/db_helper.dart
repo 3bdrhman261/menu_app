@@ -48,4 +48,13 @@ class DataBaseHelper {
 
     return meals;
   }
+
+ Future<int> deleteMealByName(String name) async {
+  final db = await database;
+  return await db!.delete(
+    'meals',
+    where: 'title = ?',
+    whereArgs: [name],
+  );
+}
 }

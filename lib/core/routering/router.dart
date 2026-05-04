@@ -1,5 +1,5 @@
 
-import 'package:app_menu/core/featusers/AddMealScree.dart';
+import 'package:app_menu/core/featusers/Add_meals_screen/AddMealScree.dart';
 import 'package:app_menu/core/featusers/MealDetailsScreen.dart';
 import 'package:app_menu/core/featusers/OnBoarding_screen/Onboarding.dart';
 import 'package:app_menu/core/featusers/HomeScreen/homeScreen.dart';

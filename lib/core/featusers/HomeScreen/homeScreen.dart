@@ -22,8 +22,9 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     dbHelper.getMeals().then((meals) {
-      print("melassssssssssssssssssssssssssssssssssssssss $meals");
+      print("melas $meals");
     });
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -71,7 +72,7 @@ class _HomescreenState extends State<Homescreen> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisSpacing: 20.sp,
-                        crossAxisSpacing: 1.sp,
+                        crossAxisSpacing: 10.sp,
                       ),
                       itemBuilder: (context, index) {
                         Meal meal = snapshot.data![index];
@@ -99,7 +100,9 @@ class _HomescreenState extends State<Homescreen> {
         ),
         floatingActionButton: FloatingActionButton(
           shape: CircleBorder(),
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).pushNamed(AppRouter.AddMeal);
+          },
           backgroundColor: AppColor.primaryColor,
           child: Icon(Icons.add, color: Colors.white, size: 30.sp),
         ),
@@ -108,3 +111,15 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
