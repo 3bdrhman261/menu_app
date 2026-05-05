@@ -1,3 +1,4 @@
+import 'package:app_menu/core/featusers/HomeScreen/widget/data/db_helpr/db_helper.dart';
 import 'package:app_menu/core/featusers/OnBoarding_screen/widget/onborading_syrver.dart';
 import 'package:app_menu/core/routering/router.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await OnboradingSyrver.inshalizshanSharedPreferences();
+  DataBaseHelper dataBaseHelper = DataBaseHelper.instance;
+  await dataBaseHelper.deleteMealByName("Fries");
 
   runApp(const MyApp());
 }

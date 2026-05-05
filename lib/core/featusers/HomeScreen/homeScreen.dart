@@ -21,9 +21,6 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
-    dbHelper.getMeals().then((meals) {
-      print("melas $meals");
-    });
 
     return SafeArea(
       child: Scaffold(
