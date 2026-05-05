@@ -84,7 +84,12 @@ class _HomescreenState extends State<Homescreen> {
                           discretion: meal.discretion,
                           rate: meal.rate,
                           onTap: () {
-                            setState(() {});
+                            setState(() {
+                              GoRouter.of(context).pushNamed(
+                                AppRouter.MealDetailsScreen,
+                                extra: meal,
+                              );
+                            });
                           },
                         );
                       },
@@ -111,15 +116,3 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

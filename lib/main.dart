@@ -1,4 +1,3 @@
-
 import 'package:app_menu/core/featusers/OnBoarding_screen/widget/onborading_syrver.dart';
 import 'package:app_menu/core/routering/router.dart';
 import 'package:flutter/material.dart';
@@ -7,11 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-
-
- 
-
   await OnboradingSyrver.inshalizshanSharedPreferences();
+
   runApp(const MyApp());
 }
 
