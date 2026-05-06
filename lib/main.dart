@@ -9,6 +9,7 @@ void main() async {
 
   await OnboradingSyrver.inshalizshanSharedPreferences();
   DataBaseHelper dataBaseHelper = DataBaseHelper.instance;
+  
   await dataBaseHelper.deleteMealByName("Fries");
 
   runApp(const MyApp());

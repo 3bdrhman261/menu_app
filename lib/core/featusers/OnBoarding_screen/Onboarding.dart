@@ -198,6 +198,7 @@ class _OnboardingState extends State<Onboarding> {
                                 GoRouter.of(
                                   context,
                                 ).pushReplacementNamed(AppRouter.HomeScreen);
+                                
                               },
                               child: Icon(
                                 Icons.arrow_forward,
