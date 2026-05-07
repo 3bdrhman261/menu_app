@@ -24,6 +24,7 @@ class _AddmealscreeState extends State<Addmealscree> {
   TextEditingController mealRate = TextEditingController();
   TextEditingController mealTime = TextEditingController();
   TextEditingController mealDescription = TextEditingController();
+  
 
   DataBaseHelper dataBaseHelper = DataBaseHelper.instance;
   bool isLoop = false;
@@ -31,7 +32,10 @@ class _AddmealscreeState extends State<Addmealscree> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: const Color.fromARGB(255, 154, 170, 12),
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           "Add Meals",
@@ -64,8 +68,9 @@ class _AddmealscreeState extends State<Addmealscree> {
                         ),
                       ),
                       CustomTextField(
+                          icons: Icon( Icons.fastfood_outlined,color: AppColor.primaryColor,),
                         controller: mealName,
-                        nameField: "Enter Meal Name",
+                        nameField: " Meal Name",
 
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -83,6 +88,7 @@ class _AddmealscreeState extends State<Addmealscree> {
                         ),
                       ),
                       CustomTextField(
+                        icons: Icon( Icons.image_outlined,color: AppColor.primaryColor,),
                         controller: mealImage,
                         nameField: " URL",
 
@@ -102,8 +108,9 @@ class _AddmealscreeState extends State<Addmealscree> {
                         ),
                       ),
                       CustomTextField(
+                          icons: Icon( Icons.star_outlined,color: AppColor.primaryColor,),
                         controller: mealRate,
-                        nameField: "Enter Rate",
+                        nameField: " 4.6",
                         keyboardType: TextInputType.number,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -122,8 +129,8 @@ class _AddmealscreeState extends State<Addmealscree> {
                       ),
                       CustomTextField(
                         controller: mealTime,
-
-                        nameField: "Enter is Time",
+  icons: Icon( Icons.timer_outlined,color: AppColor.primaryColor,),
+                        nameField: "20-30",
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Please add Time Meal ";
@@ -133,6 +140,7 @@ class _AddmealscreeState extends State<Addmealscree> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
+                        
                         "Description",
                         style: GoogleFonts.inter(
                           fontWeight: FontWeight.w600,
@@ -140,8 +148,9 @@ class _AddmealscreeState extends State<Addmealscree> {
                         ),
                       ),
                       CustomTextField(
+                          icons: Icon( Icons.description_outlined,color: AppColor.primaryColor,),
                         controller: mealDescription,
-                        maxLine: 4,
+                        maxLine: 8,
 
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -150,7 +159,7 @@ class _AddmealscreeState extends State<Addmealscree> {
                           return null;
                         },
                       ),
-                      SizedBox(height: 200.h),
+                      SizedBox(height: 100.h),
 
                       PrimaryButtonWidget(
                         bordersRadius: 100,
@@ -176,6 +185,7 @@ class _AddmealscreeState extends State<Addmealscree> {
                           }
                         },
                       ),
+                      SizedBox(height: 20.h,)
                     ],
                   ),
           ),

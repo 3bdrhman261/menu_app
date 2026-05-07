@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:app_menu/core/style/App_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +12,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
+  final Icon? icons;
 
   const CustomTextField({
     super.key,
@@ -20,6 +23,7 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.keyboardType,
     this.maxLine,
+    this.icons,
   });
 
   @override
@@ -29,31 +33,39 @@ class CustomTextField extends StatelessWidget {
       height: 80.h,
       decoration: BoxDecoration(
         border: Border.all(color: Color.fromARGB(255, 255, 255, 255), width: 2),
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: TextFormField(
-       
+        cursorColor: const Color.fromARGB(255, 106, 104, 104),
+
         maxLines: maxLine ?? 1,
         keyboardType: keyboardType ?? TextInputType.text,
         controller: controller,
         validator: validator,
         obscureText: isPassword ?? false,
         autofocus: false,
+
         decoration: InputDecoration(
+          
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          prefixIcon: icons,
           hintText: nameField ?? "",
 
           hintStyle: TextStyle(
             fontSize: 15.sp,
-            color: Color.fromARGB(255, 206, 210, 218),
+            color: Color.fromARGB(255, 204, 206, 209),
             fontWeight: FontWeight.w400,
           ),
           contentPadding: EdgeInsets.symmetric(
             horizontal: 18.w,
             vertical: 18.h,
           ),
-          
+
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
+            borderRadius: BorderRadius.circular(16.r),
             borderSide: BorderSide(width: 1.w, color: AppColor.primaryColor),
           ),
           errorBorder: OutlineInputBorder(
@@ -65,16 +77,15 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide(
               width: 1.w,
-              color: const Color.fromARGB(255, 234, 233, 233),
+              color: const Color.fromARGB(255, 227, 28, 28),
             ),
           ),
 
-          filled: true,
+          filled: false,
           fillColor: Color.fromARGB(255, 255, 255, 255),
           suffixIcon: suffixIcon,
         ),
       ),
-
     );
   }
 }
