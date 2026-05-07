@@ -16,6 +16,7 @@ class Mealdetailsscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             //  crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,18 +43,18 @@ class Mealdetailsscreen extends StatelessWidget {
 
                       child: InkWell(
                         onTap: () {
-                              GoRouter.of(context).pop();
-                            },
+                          GoRouter.of(context).pop();
+                        },
                         child: Container(
                           width: 36.w,
                           height: 36.h,
-                        
+
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                        
+
                             border: Border.all(color: Colors.white),
                           ),
-                        
+
                           child: Center(
                             child: Icon(
                               Icons.arrow_back_ios,

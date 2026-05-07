@@ -29,7 +29,7 @@ class _HomescreenState extends State<Homescreen> {
           children: [
             Topscreen(),
 
-            SizedBox(height: 25.h),
+            SizedBox(height: 16.h),
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 9.sp),
@@ -49,7 +49,7 @@ class _HomescreenState extends State<Homescreen> {
                 ],
               ),
             ),
-            SizedBox(height: 25.h),
+            SizedBox(height: 10.h),
             Expanded(
               child: FutureBuilder(
                 future: dbHelper.getMeals(),
@@ -68,7 +68,7 @@ class _HomescreenState extends State<Homescreen> {
                       itemCount: snapshot.data!.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
-                        mainAxisSpacing: 20.sp,
+                        mainAxisSpacing: 2.sp,
                         crossAxisSpacing: 10.sp,
                       ),
                       itemBuilder: (context, index) {

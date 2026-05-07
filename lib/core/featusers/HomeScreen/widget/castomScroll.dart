@@ -9,6 +9,7 @@ class Castomscroll extends StatelessWidget {
   final String? time;
   final String? image;
   final double? rate;
+
   final Function()? onTap;
   const Castomscroll({
     super.key,
@@ -35,7 +36,6 @@ class Castomscroll extends StatelessWidget {
             ),
 
             child: Column(
-              
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipRRect(

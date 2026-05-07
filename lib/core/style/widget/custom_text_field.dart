@@ -25,6 +25,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType,
     this.maxLine,
     this.icons,
+  
   });
 
   @override
@@ -47,10 +48,13 @@ class CustomTextField extends StatelessWidget {
         autofocus: false,
 
         decoration: InputDecoration(
-         
-enabledBorder: OutlineInputBorder(
-  borderRadius: BorderRadius.circular(16.r),
-   borderSide: BorderSide( width: 1,color: const Color.fromARGB(221, 208, 207, 207))),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.r),
+            borderSide: BorderSide(
+              width: 1,
+              color: const Color.fromARGB(221, 208, 207, 207),
+            ),
+          ),
           prefixIcon: icons,
           hintText: nameField ?? "",
 
@@ -69,12 +73,12 @@ enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(width: 1.w, color: AppColor.primaryColor),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
+            borderRadius: BorderRadius.circular(16.r),
 
             borderSide: BorderSide(width: 1.w, color: Colors.red),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
+            borderRadius: BorderRadius.circular(16.r),
             borderSide: BorderSide(
               width: 1.w,
               color: const Color.fromARGB(255, 227, 28, 28),
