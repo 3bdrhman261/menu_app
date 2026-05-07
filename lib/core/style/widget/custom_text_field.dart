@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:app_menu/core/style/App_color.dart';
@@ -46,11 +47,10 @@ class CustomTextField extends StatelessWidget {
         autofocus: false,
 
         decoration: InputDecoration(
-          
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
-            borderRadius: BorderRadius.circular(16.r),
-          ),
+         
+enabledBorder: OutlineInputBorder(
+  borderRadius: BorderRadius.circular(16.r),
+   borderSide: BorderSide( width: 1,color: const Color.fromARGB(221, 208, 207, 207))),
           prefixIcon: icons,
           hintText: nameField ?? "",
 
