@@ -19,7 +19,6 @@ class Mealdetailsscreen extends StatelessWidget {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
-            //  crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.all(8.sp),
@@ -68,6 +67,7 @@ class Mealdetailsscreen extends StatelessWidget {
                   ],
                 ),
               ),
+
               SizedBox(height: 8.h),
               Padding(
                 padding: EdgeInsets.all(24.r),
